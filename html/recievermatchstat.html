@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receiver Match Status</title>
+  <link rel="stylesheet" href="../css/recievermatchstat.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-follow" id="cursor-follow"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Ayutva</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donorconsent1.html" target="_blank" class="nav-link">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a href="recieverconsent1.html" target="_blank"  class="nav-link">Find Donor</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="stories.html" target="_blank" class="nav-link">Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" class="nav-link">Match Status</a>
+                </li>
+              
+            </ul>
+            <div class="nav-cta">
+                <a href="register.html" class="btn btn-primary">Register Now</a>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Match Status Section -->
+  <div class="match-status-container">
+    <h2>Your Best Donor Match</h2>
+
+    <div id="match-summary" class="match-summary">
+      <div class="match-info">
+        <h3 id="donorName">Loading donor info...</h3>
+        <p id="donorBloodGroup">Blood Group: --</p>
+        <p id="donorOrgan">Matching Organ: --</p>
+      </div>
+
+      <div class="progress-ring">
+        <svg>
+          <circle class="bg"></circle>
+          <circle class="progress" id="matchRing"></circle>
+        </svg>
+        <div class="match-percent" id="matchPercent">--%</div>
+      </div>
+    </div>
+
+    <div class="criteria-compatibledata" id="criteriacompatibledata"></div>
+  </div>
+  <script type="module" src="../js/recievermatchstat.js"></script>
+</body>
+</html>

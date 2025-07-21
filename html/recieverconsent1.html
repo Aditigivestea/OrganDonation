@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receiver Registration - Step 1</title>
+  <link rel="stylesheet" href="../css/recieverconsent1.css" />
+</head>
+<body>
+  <div class="background-circles">
+            <div class="circle" id="orb-1"></div>
+            <div class="circle" id="orb-2"></div>
+            <div class="circle" id="orb-3"></div>
+            <div class="circle" id="orb-4"></div>
+            <div class="circle" id="orb-5"></div>
+            <div class="circle" id="orb-6"></div>
+            <div class="circle" id="orb-7"></div>
+   </div>      
+  <div class="container">
+    <h1>Step 1 - Organ Receiver Registration</h1>
+
+    <form id="receiver-form-step1">
+     <!--Personal Information -->
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label>Full Name: <input type="text" required id="name" /></label>
+        <label>Date of Birth: <input type="date" required id="dob" /></label>
+        <label>Gender:
+          <select required id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Contact Number: <input type="tel" required id="contact" /></label>
+        <label>Email : <input type="email" required id="email" /></label>
+        <label>Aadhar Number: <input type="text" required id="aadhar" pattern="\d{12}" /></label>
+        <button type="button" onclick="sendOTP()">Verify Aadhar via OTP</button>
+        <div id="otp-section" style="display:none;">
+          <label>Enter OTP: <input type="text" id="otp"></label>
+          <button type="button" onclick="verifyOTP()">Submit OTP</button>
+        </div>
+      </fieldset>
+
+      <!--Address info-->
+      <fieldset>
+        <legend>Location Details</legend>
+        <label>Address:<input type="text" placeholder="Flat/Bunglow number,Building " id="fob"></label>
+        <label>Road/Area:<input type="text" placeholder="Locality/Area" id="area"></label>
+        <label>Landmark:<input type="text" placeholder="Landmark eg.Nearby bank,etc" id="landmark"></label>
+        <label>State:<input type="text" list="statelist" id="state"><datalist id="statelist"></datalist></label>
+        <label>District:<input type="text" list="districtlist" id="district"><datalist id="districtlist"></datalist></label>
+        <label>Taluka:<input type="text" list="talukalist" id="taluka"></label>
+        <label>City:<input type="text"  id="city"></label>
+        <label>Pincode:<input type="text" pattern="\d{6}" id="pincode"></label>  
+      </fieldset>
+      <!-- Medical Need Info -->
+      <fieldset>
+        <legend>Organ Requirement</legend>
+        <label>Organ Needed:
+           <input type="text" required id="organNeeded" placeholder="e.g., Kidney, Liver, Heart" />
+        </label>
+        <label>Diagnosis / Medical History: <textarea required id="diagnosis" placeholder="Describe condition, diagnosis, how long etc."></textarea></label>
+        <p id="supportMessage" class="hidden">Every story matters...</p>
+        <label>Treating Doctor: <input type="text" id="treatingDoctor" required /></label>
+        <label>Hospital Name: <input type="text" id="hospitalName" required /></label>
+      </fieldset>
+
+       <fieldset>
+        <legend>Medical Document Upload</legend>
+        <label>Blood Group:
+        <select required id="bloodgroup">
+            <option value="">Please Select Blood Type</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+         </label> 
+        <p>Please upload recent reports:</p>
+        <label>Blood Test Report: <input type="file" id="bloodreport" required></label>
+        <label>Other Medical Reports: <input type="file" id="otherreports"multiple></label>
+        <label id="aadharfile">Aadhar Card (PDF/JPG): <input type="file" id="aadharfile" accept=".pdf, image/*" required></label>
+      </fieldset>
+
+      <!-- Insurance Information -->
+      <fieldset>
+        <legend>Insurance & Financial Info</legend>
+        <label>Do you have medical insurance?
+          <select id="hasInsurance" required>
+            <option value="">Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </label>
+        <label>If yes, Insurance Provider: <input type="text" id="insuranceProvider" /></label>
+        <label>Policy Number: <input type="text" id="policyNumber" /></label>
+        <label>Expected Financial Assistance Needed: <input type="text" id="assistanceNeeded" /></label>
+      </fieldset>
+
+      <!-- Emergency Contact -->
+      <fieldset>
+        <legend>Emergency Contact</legend>
+        <label>Emergency Contact Name: <input type="text" id="emergencyName" required /></label>
+        <label>Relationship: <input type="text" id="relationship" required /></label>
+        <label>Phone Number: <input type="tel" id="emergencyContact" required /></label>
+      </fieldset>
+
+      <!-- Declaration -->
+      <fieldset>
+        <legend>Declaration</legend>
+        <label><input type="checkbox" id="consent" required> I confirm that all information is accurate and I genuinely seek organ transplant assistance.</label>
+      </fieldset>
+
+      <button type="button" onclick="goToNext()">Next Step →</button>
+    </form>
+  </div>
+
+  <script src="../js/recieverconsent1.js"></script>
+</body>
+</html>

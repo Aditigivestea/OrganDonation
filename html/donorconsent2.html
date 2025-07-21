@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donor Consent - Step 2</title>
+  <link rel="stylesheet" href="../css/donorconsent2.css">
+</head>
+<body>
+      <div class="background-circles">
+            <div class="circle" id="orb-1"></div>
+            <div class="circle" id="orb-2"></div>
+            <div class="circle" id="orb-3"></div>
+            <div class="circle" id="orb-4"></div>
+            <div class="circle" id="orb-5"></div>
+            <div class="circle" id="orb-6"></div>
+            <div class="circle" id="orb-7"></div>
+   </div> 
+  <div class="container">
+    <h1>Step 2: Consent & Health Details</h1>
+
+    <form id="step2-form">
+      <fieldset>
+        <legend>Organs You Wish to Donate</legend>
+        <label><input type="checkbox" name="organs" value="Heart" id="heart"> Heart</label>
+        <label><input type="checkbox" name="organs" value="Liver" id="liver"> Liver</label>
+        <label><input type="checkbox" name="organs" value="Kidneys" id="kidney"> Kidneys</label>
+        <label><input type="checkbox" name="organs" value="Lungs" id="lungs"> Lungs</label>
+        <label><input type="checkbox" name="organs" value="Pancreas" id="pancreas"> Pancreas</label>
+        <label><input type="checkbox" name="organs" value="Eyes" id="eyes"> Eyes</label>
+        <label><input type="checkbox" name="organs" value="Skin" id="skin"> Skin</label>
+        <label><input type="checkbox" name="organs" value="Limbs"id="limbs"> Limbs</label>
+        <label><input type="checkbox" name="organs" value="Tissue"id="tissue"> Tissue</label>
+        <label><input type="checkbox" name="organs" value="Bone Marrow"id="bonemarrow"> Bone Marrow</label>
+        <label><input type="checkbox" name="organs" value="Blood" id="blood">Do you wish to donate blood too? </label>
+      </fieldset>
+      <fieldset>
+        <legend>Medical Background</legend>
+        <label>Chronic Illnesses: <input type="text" name="illness" id="illness"></label>
+        <label>Allergies: <input type="text" name="allergies" id="allergies"></label>
+        <label>Previous Surgeries: <input type="text" name="surgeries" id="surgeries"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Health Checklist</legend>
+        <label><input type="checkbox" name="fit" required id="fit1"> Free from communicable diseases</label>
+        <label><input type="checkbox" name="fit" required id="fit2"> Not suffering from terminal illness</label>
+        <label><input type="checkbox" name="fit" required id="fit3"> Normal/controlled blood pressure</label>
+        <label><input type="checkbox" name="fit" required id="fit4"> No history of drug or alcohol abuse</label>
+      </fieldset>
+    <fieldset>
+       <legend>Additional Comments</legend>
+       <label for="notes">Any Notes You'd Like To Add:</label>
+       <textarea id="notes" name="notes" placeholder="Tell Us More"></textarea>
+    </fieldset>
+      <fieldset>
+        <legend>Final Declaration</legend>
+        <label>
+          <input type="checkbox" id="finalConsent" required>
+          I confirm that I wish to donate my organs and the above information is true.
+        </label>
+      </fieldset>
+      <div class="buttongrp">
+      <button type="button" class="buttons"><a href="donorconsent1.html">← Back</a></button>
+      <button type="submit" class="buttons">Submit Consent</button>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="../js/donorconsent2.js"></script>
+</body>
+</html>

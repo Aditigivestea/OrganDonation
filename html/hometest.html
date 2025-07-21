@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayutva</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="cursor-follow" id="cursor-follow"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Ayutva</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donorconsent1.html" target="_blank" class="nav-link">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a href="recieverconsent1.html" target="_blank"  class="nav-link">Find Donor</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="stories.html" target="_blank" class="nav-link">Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" id="matchstatlink" class="nav-link">Match Status</a>
+                </li>
+            </ul>
+            <div class="nav-cta">
+                <a href="register.html" class="btn btn-primary">Register Now</a>
+            </div>
+            <div class="profile-icon" id="profileIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="medical-pattern"></div>
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+            <div class="glow-orb glow-orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span>🤍 Ayutva, Ayu(Life) + Tva(Essence)</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Give the Gift of</span>
+                    <span class="title-line glow-text">Life</span>
+                    <span class="title-line">Through Organ Donation</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Connect donors with recipients. Every registration can save a life. 
+                    Join our mission to eliminate organ waiting lists and give hope to thousands.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">0.65(PMP)</span>
+                        <span class="stat-label">India's organ donation rate is one of the lowest globally, standing at a dismal of above number. We urge people of India to this beautiful deed od saving a life.</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12526</span>
+                        <span class="stat-label">In 2023, India conducted a total of 12,526 kidney transplants (1,630 from deceased donors) and 4,173 liver transplants (828 from deceased donors). </span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">80%</span>
+                        <span class="stat-label">A concerning trend is the significant gender disparity in organ donation, with women being more likely to donate organs while men are more likely to be recipients</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Become a Donor</button>
+                    <button class="btn btn-secondary">Find a Donor</button>
+                </div>
+            </div>
+             <div class="hero-visual">
+                <div class="medical-illustration">
+                    <div class="heart-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="pulse-rings">
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Process Section -->
+    <section class="donation-process" id="donate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Organ Donation Works</h2>
+                <p class="section-subtitle">A simple process that creates extraordinary impact</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <path d="M20 8v6M23 11h-6"/>
+                        </svg>
+                    </div>
+                    <div class="process-number">01</div>
+                    <h3>Register as Donor</h3>
+                    <p>Complete your registration with medical history and consent. Quick, secure, and completely confidential.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <div class="process-number">02</div>
+                    <h3>Medical Evaluation</h3>
+                    <p>Our hospital admin team conducts thorough screening to ensure compatibility and safety for all parties.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="process-number">03</div>
+                    <h3>Match with Recipient</h3>
+                    <p>Advanced matching algorithm connects you with compatible recipients based on medical criteria.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="process-number">04</div>
+                    <h3>Save a Life</h3>
+                    <p>Your donation gives someone a second chance at life. Experience the joy of making a difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Donor Section -->
+    <section class="find-donor" id="find-donor">
+        <div class="container">
+            <div class="find-donor-content">
+                 <div class="donor-graphic">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake-icon lucide-heart-handshake"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>
+                    </div>
+                <div class="find-donor-text">
+                    <h2 class="section-title">Need an Organ Donor?</h2>
+                    <p class="section-subtitle">Register with Ayutva Now!</p>
+                    <div class="donor-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Verified Donors</h4>
+                                <p>All donors undergo comprehensive medical and background verification</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock medical support and emergency coordination</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Secure & Private</h4>
+                                <p>Advanced encryption protects all personal and medical information</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Be an organ reciever</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Stories Section -->
+    <section class="success-stories" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Inspiring Stories</h2>
+                <p class="section-subtitle">Real people, real lives transformed through organ donation</p>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <img src="https://www.aiims.edu/aiims/orbo/images/preetiun1.jpg" alt="Preeti Unhale">
+                    </div>
+                    <div class="story-content">
+                        <h4>Preeti Unhale</h4>
+                        <span class="story-role">Heart Recipient</span>
+                        <p>Mrs. Preeti Unhale, once an active college student, was diagnosed with cardiomyopathy in 1993, and her condition worsened over the years. In 2001, she received a life-saving heart transplant thanks to a donor family who chose to donate their 14-year-old son's heart after a tragic accident. Today, she leads a normal, fulfilling life, emphasizing the profound impact and importance of organ donation.</p><br>
+                        <div class="story-stats">
+                            <span>4 years</span>
+                            <span>100% success</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <img src="data:image/jpeg;base64,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" alt="Rolly Prajapati">
+                    </div>
+                    <div class="story-content">
+                        <h4>Rolly Prajapati</h4>
+                        <span class="story-role">Donor saved lives of multiple</span>
+                        <p>Rolly Prajapati, a six-year-old girl from Noida, was tragically killed by a stray bullet and later declared brain dead. Her parents made the rare decision to donate her organs, saving multiple lives and making her the youngest donor at AIIMS. Her story is now seen as a potential turning point for organ donation awareness in India. Rolly parents beared the loss ,still took a life changing decision for others.</p><br>
+                        <div class="story-stats">
+                            <span>6 Lives</span>
+                            <span>Yongest Donor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <img src="https://images.indianexpress.com/2020/03/WhatsApp-Image-2020-03-07-at-00.03.08.jpeg" alt="Shreya Siddanagowder">
+                    </div>
+                    <div class="story-content">
+                        <h4>Shreya Siddanagowder</h4>
+                        <span class="story-role">Limbs Recipient</span>
+                        <p>Shreya Siddanagowder’s life took a harsh turn in 2016 when, at 18, she lost both hands in a devastating bus accident .Nearly a year later she made history by receiving Asia’s first above‑elbow bilateral hand transplant using donor arms from a young boy which restored about 85% of her former daily function.After 6 monts of transplat she started her life again in IIM Ahmedabad.</p><br>
+                        <div class="story-stats">
+                            <span>Life Rebuilt</span>
+                            <span>Crash Survivor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA Section -->
+    <section class="registration-cta" id="register">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="cta-title">Ready to Be a Hero?</h2>
+                    <p class="cta-subtitle">Join thousands of heroes who have already registered. Your decision today could save up to 8 lives tomorrow.</p>
+                    <div class="cta-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Free registration process</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Complete medical support</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>100%  aadhar verified users</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large">Register as Donor</button>
+                    <button class="btn btn-secondary btn-large">Find a Donor</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h1 class="contact-title"><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#ff6d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:10px;" viewBox="0 0 24 24">
+                        <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .57 2.41 2 2 0 0 1-.45 2.11L10.1 11.1a16 16 0 0 0 6.9 6.9l1.86-1.86a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.41.57A2 2 0 0 1 22 16.92z"/>
+                        </svg></span> Get In Touch </h1>
+                    <p class="contact-subtitle">Have questions? Our medical team is here to help 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contactstat">
+                <div class="contact-form">
+                    <form id="contactform">
+                        <h3>Send us a Message</h3>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select required name="inquiry">
+                                <option value="">Select inquiry type</option>
+                                <option value="donor">Donor Registration</option>
+                                <option value="recipient">Find Donor</option>
+                                <option value="medical">Medical Questions</option>
+                                <option value="support">General Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                 <div class="live-stats">
+                <div class="stats-header">
+                    <h3>Live Statistics of India</h3>
+                    <div class="live-indicator">
+                        <span class="pulse-dot"></span>
+                        <span>LIVE</span>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Active Donors</h4>
+                            <span class="stat-number" id="donors">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Lives Saved</h4>
+                            <span class="stat-number" id="lives">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Pending Requests</h4>
+                            <span class="stat-number" id="requests">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Active Matches</h4>
+                            <span class="stat-number" id="matches">0</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Ayutva</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, saving lives through organ donation. Every life matters, every donation counts.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="donorconsent1.html">Become a Donor</a></li>
+                        <li><a href="recieverconsent1.html">Find a Donor</a></li>
+                        <li><a href="stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#medical">Medical Guidelines</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For More Info</h4>
+                    <ul class="footer-links">
+                       <li><a href="https://notto.abdm.gov.in/">Organ Donation Registry</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&#10084;  Made With Love and Effort</p>
+            </div>
+        </div>
+    </footer>
+    <div class="sidebar" id="sidebar">
+    <h3><span class="glow">Profile</span></h3>
+    <a href="#"><span class="icons"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M160 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM368 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z"/></svg>
+        Dashboard</span></a>
+    <a href="#"><span class="icons"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+        Settings</span></a>
+    <a href="#"><span class="icons"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z"/></svg>
+        For More Guidance</span></a>
+    <a href="#" id="logout"><span class="icons"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg>
+        Logout</span></a>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <script type="module" src="../js/script.js"></script>
+</body>
+</html>

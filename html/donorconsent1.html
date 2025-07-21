@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Registration - Step 1</title>
+  <link rel="stylesheet" href="../css/donorconsent1.css">
+</head>
+<body>
+    <div class="background-circles">
+            <div class="circle" id="orb-1"></div>
+            <div class="circle" id="orb-2"></div>
+            <div class="circle" id="orb-3"></div>
+            <div class="circle" id="orb-4"></div>
+            <div class="circle" id="orb-5"></div>
+            <div class="circle" id="orb-6"></div>
+            <div class="circle" id="orb-7"></div>
+   </div>     
+  <div class="container">
+    <h1>Step 1 - Organ Donor Registration </h1>
+    <form id="donor-form-step1">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label>Full Name: <input type="text" required id="name"></label>
+        <label>Date of Birth: <input type="date" id="dob" required></label>
+        <label>Gender:
+          <select required id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Contact Number: <input type="tel" required id="tel"></label>
+        <label>Email: <input type="email" required id="email"></label>
+        <label>Aadhar Number: <input type="text" id="aadhar" pattern="\d{12}" required></label>
+        <button type="button" onclick="sendOTP()">Verify Aadhar via OTP</button>
+        <div id="otp-section">
+          <label>Enter OTP: <input type="text" id="otp"></label>
+          <button type="button" onclick="verifyOTP()">Submit OTP</button>
+        </div>
+      </fieldset>
+
+      <!-- Family Doctor Information -->
+      <fieldset>
+        <legend>Family Doctor Information</legend>
+        <label>Doctor's Name: <input type="text" required id="docname"></label>
+        <label>Clinic/Hospital: <input type="text" required id="hosp"></label>
+        <label>Doctor's Contact: <input type="tel" required id="doccontact"></label>
+      </fieldset>
+       
+     <fieldset>
+        <legend>Location Details</legend>
+        <label>Address:<input type="text" placeholder="Flat/Bunglow number,Building " id="fob"></label>
+        <label>Road/Area:<input type="text" placeholder="Locality/Area" id="area"></label>
+        <label>Landmark:<input type="text" placeholder="Landmark eg.Nearby bank,etc" id="landmark"></label>
+        <label>State:<input type="text" list="statelist" id="state"><datalist id="statelist"></datalist></label>
+        <label>District:<input type="text" list="districtlist" id="district"><datalist id="districtlist"></datalist></label>
+        <label>Taluka:<input type="text" list="talukalist" id="taluka"></label>
+        <label>City:<input type="text"  id="city"></label>
+        <label>Pincode:<input type="text" pattern="\d{6}" id="pincode"></label>  
+      </fieldset>
+
+      <!-- Medical Report Uploads -->
+      <fieldset>
+        <legend>Medical Document Upload</legend>
+        <label>Blood Group:
+        <select required id="bloodgroup">
+            <option value="">Please Select Blood Type</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+         </label> 
+        <p>Please upload recent reports:</p>
+        <label>Blood Test Report: <input type="file" id="bloodreport" required></label>
+        <label>Other Medical Reports: <input type="file" id="otherreports"multiple></label>
+        <label id="aadharfile">Aadhar Card (PDF/JPG): <input type="file" id="aadharupload" accept=".pdf, image/*" required></label>
+      </fieldset>
+
+      <!-- Blood Eligibility Checklist -->
+      <fieldset>
+        <legend>Blood & Health Criteria Checklist</legend>
+        <label><input type="checkbox" id="cbh1"> I have no current infections (e.g., Hepatitis, HIV).</label>
+        <label><input type="checkbox" id="cbh2"> My hemoglobin level is above minimum criteria.</label>
+        <label><input type="checkbox" id="cbh3"> I am not under any chemotherapy/radiation treatment.</label>
+        <label><input type="checkbox" id="cbh4"> I do not have chronic illness affecting organs.</label>
+        <label><input type="checkbox" id="cbh5"> I weigh more than 45 kg.</label>
+        <label><input type="checkbox" id="cbh6"> My blood pressure and sugar levels are normal.</label>
+      </fieldset>
+
+      <!-- Consent Declaration -->
+      <fieldset>
+        <legend>Consent for Organ Donation</legend>
+        <label><input type="checkbox" id="cbo1" required> I voluntarily wish to donate my organs after death.</label>
+        <label><input type="checkbox" id="cbo2" required> I understand I can choose to donate specific organs.</label>
+        <label><input type="checkbox" id="cbo3" required> I grant permission to medical authorities to evaluate my organs for viability.</label>
+        <label><input type="checkbox" id="cbo4" required> I confirm this decision is made without any pressure.</label>
+        <label><input type="checkbox" id="cbo5" required> I authorize Ayutva to store and share my data with authorized hospitals.</label>
+      </fieldset>
+      <label><input type="checkbox" id="tnc"required> I hereby gurantee all the reports and infornation is authentic.</label>
+      <button type="button" onclick="goToStep2()">Next Step →</button>
+      <div id="recaptcha-container"></div>
+    </form>
+  </div>
+
+  <script type="module" src="../js/donorconsent1.js"></script>
+</body>
+</html>

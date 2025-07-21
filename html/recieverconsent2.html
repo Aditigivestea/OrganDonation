@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receiver Registration - Step 2</title>
+  <link rel="stylesheet" href="../css/recieverconsent2.css" />
+</head>
+<body>
+  <div class="background-circles">
+            <div class="circle" id="orb-1"></div>
+            <div class="circle" id="orb-2"></div>
+            <div class="circle" id="orb-3"></div>
+            <div class="circle" id="orb-4"></div>
+            <div class="circle" id="orb-5"></div>
+            <div class="circle" id="orb-6"></div>
+            <div class="circle" id="orb-7"></div>
+   </div>     
+  <div class="container">
+    <h1>Step 2 - Additional Information</h1>
+
+    <form id="receiver-form-step2">
+      <!-- Urgency Meter -->
+      <fieldset>
+        <legend>Urgency Level</legend>
+        <div class="urgency-wrapper">
+          <input type="range" min="1" max="5" step="1" value="3" id="urgencyMeter" />
+          <div id="urgencyLabel"></div>
+        </div>
+      </fieldset>
+
+      <!-- Health Status -->
+      <fieldset>
+        <legend>Health Parameters</legend>
+        <label>Blood Pressure: <input type="text" id="bp" placeholder="e.g., 120/80" /></label>
+        <label>Oxygen Level (%): <input type="number" id="oxygen"/></label>
+        <label>Weight (kg): <input type="number" id="weight" /></label>
+        <label>Coexisting conditions: <textarea id="comorbidities" placeholder="Diabetes, Hypertension..."></textarea></label>
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <legend>Preferred Transplant Hospital/City</legend>
+        <label>Hospital Preference: <input type="text" id="preferredHospital" /></label>
+        <label>City/Region: <input type="text" id="preferredCity" /></label>
+      </fieldset>
+
+      <fieldset>
+        <label>Year of Initial Diagnosis: <input type="number" id="diagnosisYear" min="1950" max="2025"></label>
+            <label>Duration of Illness (years): <input type="text" id="illnessDuration"></label>
+
+            <label>Current Treatment Status:
+            <select id="treatmentStatus">
+                <option value="">Select</option>
+                <option>On dialysis</option>
+                <option>Under medication</option>
+                <option>Post-surgery follow-up</option>
+                <option>Awaiting transplant only</option>
+            </select>
+            </label>
+
+      </fieldset>
+      <button type="button" class="buttons" id="backbtn">← Back</button>
+      <button type="submit" class="buttons">Submit Consent</button>
+    </form>
+  </div>
+
+  <script type="module" src="../js/recieverconsent2.js"></script>
+</body>
+</html>
