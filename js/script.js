@@ -105,7 +105,7 @@ function initializeWebsite() {
 
         lastScrollTop = scrollTop;
     });
-}
+
 
 // Forms Setup
 function setupForms() {
