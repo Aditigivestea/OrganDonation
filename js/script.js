@@ -306,7 +306,6 @@ function animateStat(id, finalValue) {
 }
 
 window.addEventListener("DOMContentLoaded", loadStats);
-setInterval(1000);
 
 document.addEventListener("DOMContentLoaded", () => { 
   const profileIcon = document.querySelector('.profile-icon');
