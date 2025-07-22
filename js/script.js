@@ -200,6 +200,7 @@ function setupCursorFollow() {
     
     if (cursor) {
         document.addEventListener('mousemove', function(e) {
+              console.log('Mouse moved to:', e.clientX, e.clientY); 
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         }); 
