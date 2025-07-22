@@ -51,7 +51,7 @@ const matchLink = document.querySelector("a.nav-link[href='#']");
         return;
       }
 
-      console.warn("Email not found in consent records");
+      console.log("Email not found in consent records");
       matchLink.addEventListener("click", (e) => {
         e.preventDefault();
         alert("No match record found for this email.");
@@ -82,30 +82,7 @@ function initializeWebsite() {
     setupCounterAnimations();
 }
 
-// Navigation Setup
-function setupNavigation() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            e.preventDefault();
-            const targetSection = document.querySelector(href);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-});
-
-
-    // Navbar scroll effects
+// Navbar scroll effects
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
