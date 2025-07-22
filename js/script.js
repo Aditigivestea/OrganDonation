@@ -37,7 +37,7 @@ const matchLink = document.querySelector("a.nav-link[href='#']");
 
       if (!receiverSnap.empty) {
         console.log("Redirect to receiver match status");
-        matchLink.href = "receivermatchstat.html";
+        matchLink.href = "recievermatchstat.html";
         return;
       }
 
