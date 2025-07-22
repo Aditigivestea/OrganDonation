@@ -19,7 +19,7 @@ const matchLink = document.querySelector("a.nav-link[href='#']");
 
     onAuthStateChanged(auth, async (user) => {
     if (!user) {
-      console.warn("Not logged in");
+      console.log("Not logged in");
       matchLink.addEventListener("click", (e) => {
         e.preventDefault();
         alert("Please login to view match status");
