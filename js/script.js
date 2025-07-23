@@ -18,6 +18,7 @@ const db = getFirestore(app);
 const matchLink = document.getElementById("matchstatlink");
 
 onAuthStateChanged(auth, async (user) => {
+  const matchLink = document.getElementById("matchstatlink");
   if (!matchLink) return;
 
   if (!user) {
@@ -39,20 +40,22 @@ onAuthStateChanged(auth, async (user) => {
       query(collection(db, "DonorConsents"), where("email", "==", userEmail))
     );
 
-    if (!receiverSnap.empty) {
-      matchLink.setAttribute("href", "recievermatchstat.html");
-    } else if (!donorSnap.empty) {
-      matchLink.setAttribute("href", "donormatchstat.html");
-    } else {
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!receiverSnap.empty) {
+        window.open("recievermatchstat.html", "_blank");
+      } else if (!donorSnap.empty) {
+        window.open("donormatchstat.html", "_blank");
+      } else {
         alert("No match record found for this email.");
-      });
-    }
+      }
+    });
+
   } catch (error) {
     console.error("Error while checking user match:", error);
   }
 });
+
 
 
 // Global Variables
