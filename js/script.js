@@ -21,12 +21,9 @@ onAuthStateChanged(auth, async (user) => {
   const matchLink = document.getElementById("matchStatusLink");
   if (!matchLink) return;
 
-  matchLink.addEventListener("click", (e) => { 
-    e.preventDefault();
-  });
-
   if (!user) {
-    matchLink.addEventListener("click", () => {
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
       alert("Please login to view match status.");
     });
     return;
@@ -41,17 +38,25 @@ onAuthStateChanged(auth, async (user) => {
     ]);
 
     if (!receiverSnap.empty) {
-      matchLink.href = "recievermatchstat.html";
+      matchLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "recievermatchstat.html";
+      });
     } else if (!donorSnap.empty) {
-      matchLink.href = "donormatchstat.html";
+      matchLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "donormatchstat.html";
+      });
     } else {
-      matchLink.addEventListener("click", () => {
+      matchLink.addEventListener("click", (e) => {
+        e.preventDefault();
         alert("No match data found for this account.");
       });
     }
   } catch (error) {
     console.error("Error determining user type:", error);
-    matchLink.addEventListener("click", () => {
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
       alert("Error loading match status. Try again.");
     });
   }
