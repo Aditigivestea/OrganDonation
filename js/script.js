@@ -21,40 +21,36 @@ onAuthStateChanged(auth, async (user) => {
   if (!matchLink) return;
 
   if (!user) {
-    alert("Login to view your match status")
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Please login to view match status");
+    });
     return;
   }
 
-  const email = user.email;
-
   try {
-    const receiverQuery = query(collection(db, "ReceiverConsents"), where("email", "==", email));
-    const donorQuery = query(collection(db, "DonorConsents"), where("email", "==", email));
+    const userEmail = user.email;
 
-    const [receiverSnap, donorSnap] = await Promise.all([
-      getDocs(receiverQuery),
-      getDocs(donorQuery)
-    ]);
+    const receiverSnap = await getDocs(
+      query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
+    );
+
+    const donorSnap = await getDocs(
+      query(collection(db, "DonorConsents"), where("email", "==", userEmail))
+    );
 
     if (!receiverSnap.empty) {
-      matchLink.href = "recievermatchstat.html";
+      matchLink.setAttribute("href", "recievermatchstat.html");
     } else if (!donorSnap.empty) {
-      matchLink.href = "donormatchstat.html";
+      matchLink.setAttribute("href", "donormatchstat.html");
     } else {
-      matchLink.href = "#";
-      matchLink.onclick = (e) => {
+      matchLink.addEventListener("click", (e) => {
         e.preventDefault();
-        alert("You are not registered as a Donor or Receiver.");
-      };
+        alert("No match record found for this email.");
+      });
     }
-
-  } catch (err) {
-    console.error("Error checking role:", err);
-    matchLink.href = "#";
-    matchLink.onclick = (e) => {
-      e.preventDefault();
-      alert("Unable to fetch match status. Try again later.");
-    };
+  } catch (error) {
+    console.error("Error while checking user match:", error);
   }
 });
 
