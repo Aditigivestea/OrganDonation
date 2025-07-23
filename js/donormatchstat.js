@@ -49,7 +49,7 @@ onAuthStateChanged(auth, async function (user) {
     const donorData = donordata.docs[0].data();
     const donorOrgans = donorData.organs;
     const donorName = donorData.name || "Donor";
-    const donorBlood = donorData.bloodgroup;
+    const donorBlood = donorData.bloodGroup;
     document.getElementById("donorName").innerText = donorName;
     const bloodGroupElement = document.getElementById("donorBloodGroup");
     if (bloodGroupElement) {
