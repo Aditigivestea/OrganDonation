@@ -18,47 +18,43 @@ const db = getFirestore(app);
 const matchLink = document.getElementById("matchStatusLink");
 
 onAuthStateChanged(auth, async (user) => {
-  const matchLink = document.getElementById("matchStatusLink");
   if (!matchLink) return;
 
   if (!user) {
-    matchLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Please login to view match status.");
-    });
+    alert("Login to view your match status")
     return;
   }
 
+  const email = user.email;
+
   try {
-    const email = user.email;
+    const receiverQuery = query(collection(db, "ReceiverConsents"), where("email", "==", email));
+    const donorQuery = query(collection(db, "DonorConsents"), where("email", "==", email));
 
     const [receiverSnap, donorSnap] = await Promise.all([
-      getDocs(query(collection(db, "ReceiverConsents"), where("email", "==", email))),
-      getDocs(query(collection(db, "DonorConsents"), where("email", "==", email))),
+      getDocs(receiverQuery),
+      getDocs(donorQuery)
     ]);
 
     if (!receiverSnap.empty) {
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location.href = "recievermatchstat.html";
-      });
+      matchLink.href = "recievermatchstat.html";
     } else if (!donorSnap.empty) {
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location.href = "donormatchstat.html";
-      });
+      matchLink.href = "donormatchstat.html";
     } else {
-      matchLink.addEventListener("click", (e) => {
+      matchLink.href = "#";
+      matchLink.onclick = (e) => {
         e.preventDefault();
-        alert("No match data found for this account.");
-      });
+        alert("You are not registered as a Donor or Receiver.");
+      };
     }
-  } catch (error) {
-    console.error("Error determining user type:", error);
-    matchLink.addEventListener("click", (e) => {
+
+  } catch (err) {
+    console.error("Error checking role:", err);
+    matchLink.href = "#";
+    matchLink.onclick = (e) => {
       e.preventDefault();
-      alert("Error loading match status. Try again.");
-    });
+      alert("Unable to fetch match status. Try again later.");
+    };
   }
 });
 
