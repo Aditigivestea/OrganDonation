@@ -50,9 +50,12 @@ onAuthStateChanged(auth, async function (user) {
     const donorOrgans = donorData.organs;
     const donorName = donorData.name || "Donor";
     const donorBlood = donorData.bloodgroup;
-    console.log("Donor Blood Group:", donorBlood);
-    document.getElementById("donorBloodGroup").innerText = donorBlood || "--";
     document.getElementById("donorName").innerText = donorName;
+    const bloodGroupElement = document.getElementById("donorBloodGroup");
+    if (bloodGroupElement) {
+    bloodGroupElement.innerText = donorBlood || "--";
+   }
+
 
 
     const recieverdata = await getDocs(collection(db, "ReceiverConsents"));
