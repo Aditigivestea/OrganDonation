@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const matchLink = document.getElementById("matchStatusLink");
+const matchLink = document.getElementById("matchstatlink");
 
 onAuthStateChanged(auth, async (user) => {
   if (!matchLink) return;
