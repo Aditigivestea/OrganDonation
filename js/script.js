@@ -15,54 +15,44 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const matchLink = document.querySelector("a.nav-link[href='#']"); 
+const matchLink = document.getElementById("matchStatusLink");
 
-    onAuthStateChanged(auth, async (user) => {
-    if (!user) {
-      console.log("Not logged in");
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        alert("Please login to view match status");
-      });
-      return;
-    }
+onAuthStateChanged(auth, async (user) => {
+  if (!matchLink) return;
 
+  if (!user) {
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Please login to view match status");
+    });
+    return;
+  }
+
+  try {
     const userEmail = user.email;
-    console.log("Logged in as:", userEmail);
 
-    try {
-      const receiverSnap = await getDocs(
-        query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
-      );
+    const receiverSnap = await getDocs(
+      query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
+    );
 
-      if (!receiverSnap.empty) {
-        console.log("Redirect to receiver match status");
-        matchLink.href = "recievermatchstat.html";
-        return;
-      }
+    const donorSnap = await getDocs(
+      query(collection(db, "DonorConsents"), where("email", "==", userEmail))
+    );
 
-      const donorSnap = await getDocs(
-        query(collection(db, "DonorConsents"), where("email", "==", userEmail))
-      );
-
-      if (!donorSnap.empty) {
-        console.log("Redirect to donor match status");
-        matchLink.href = "donormatchstat.html";
-        return;
-      }
-
-      console.log("Email not found in consent records");
+    if (!receiverSnap.empty) {
+      matchLink.setAttribute("href", "recievermatchstat.html");
+    } else if (!donorSnap.empty) {
+      matchLink.setAttribute("href", "donormatchstat.html");
+    } else {
       matchLink.addEventListener("click", (e) => {
         e.preventDefault();
         alert("No match record found for this email.");
       });
-    } catch (error) {
-      console.error("Error checking Firestore:", error);
     }
-  });
-
-
-
+  } catch (error) {
+    console.error("Error while checking user match:", error);
+  }
+});
 
 // Global Variables
 let scrollDirection = 'down';
