@@ -18,41 +18,45 @@ const db = getFirestore(app);
 const matchLink = document.getElementById("matchStatusLink");
 
 onAuthStateChanged(auth, async (user) => {
+  const matchLink = document.getElementById("matchStatusLink");
   if (!matchLink) return;
 
+  matchLink.addEventListener("click", (e) => { 
+    e.preventDefault();
+  });
+
   if (!user) {
-    matchLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Please login to view match status");
+    matchLink.addEventListener("click", () => {
+      alert("Please login to view match status.");
     });
     return;
   }
 
   try {
-    const userEmail = user.email;
+    const email = user.email;
 
-    const receiverSnap = await getDocs(
-      query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
-    );
-
-    const donorSnap = await getDocs(
-      query(collection(db, "DonorConsents"), where("email", "==", userEmail))
-    );
+    const [receiverSnap, donorSnap] = await Promise.all([
+      getDocs(query(collection(db, "ReceiverConsents"), where("email", "==", email))),
+      getDocs(query(collection(db, "DonorConsents"), where("email", "==", email))),
+    ]);
 
     if (!receiverSnap.empty) {
-      matchLink.setAttribute("href", "recievermatchstat.html");
+      matchLink.href = "recievermatchstat.html";
     } else if (!donorSnap.empty) {
-      matchLink.setAttribute("href", "donormatchstat.html");
+      matchLink.href = "donormatchstat.html";
     } else {
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        alert("No match record found for this email.");
+      matchLink.addEventListener("click", () => {
+        alert("No match data found for this account.");
       });
     }
   } catch (error) {
-    console.error("Error while checking user match:", error);
+    console.error("Error determining user type:", error);
+    matchLink.addEventListener("click", () => {
+      alert("Error loading match status. Try again.");
+    });
   }
 });
+
 
 // Global Variables
 let scrollDirection = 'down';
