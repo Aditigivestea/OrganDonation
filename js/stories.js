@@ -150,7 +150,7 @@ onSnapshot(collection(db, "stories"), (snapshot) => {
 let currentIndex = 0;
 let allCards = [];
 
-function renderSingleCard(index, direction = "right") {
+function showsinglecard(index, direction = "right") {
   if (!allCards[index]) return;
 
   const oldCard = cardStack.firstChild;
@@ -174,7 +174,7 @@ function renderSingleCard(index, direction = "right") {
 onSnapshot(collection(db, "stories"), (snapshot) => {
   allCards = snapshot.docs.map(doc => createCard(doc.data())).reverse();
   currentIndex = 0;
-  renderSingleCard(currentIndex);
+  showsinglecard(currentIndex);
 });
 
 //  swipe buttons
@@ -224,14 +224,14 @@ window.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
-      renderSingleCard(currentIndex,"left");
+      showsinglecard(currentIndex,"left");
     }
   });
 
   nextBtn.addEventListener("click", () => {
     if (currentIndex < allCards.length - 1) {
       currentIndex++;
-      renderSingleCard(currentIndex,"right");
+      showsinglecard(currentIndex,"right");
     }
   });
 });
