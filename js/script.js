@@ -71,7 +71,6 @@ function initializeWebsite() {
 
 // Forms Setup
 function setupForms() {
-    console.log("setupForms called");
     const contactForm = document.querySelector(".contact-form form");
     if (contactForm) {
         contactForm.addEventListener("submit", function(e) {
