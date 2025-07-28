@@ -105,7 +105,7 @@ function handleContactForm(form) {
     submitBtn.disabled = true;
 
     setTimeout(() => {
-        alert(`Thank you, ${name}! Your message is sent. `, 'success');
+        alert(`Thank you, ${name}! Your message is sent. `);
         form.reset();
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
