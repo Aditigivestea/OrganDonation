@@ -56,70 +56,35 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-
-
-// Global Variables
-let scrollDirection = 'down';
-let lastScrollTop = 0;
-
 // DOM Content Loaded Event
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     initializeWebsite();
 });
 
 // Initialize Website
 function initializeWebsite() {
-    setupNavigation();
     setupForms();
     setupInteractiveElements();
     setupCursorFollow();
     setupCounterAnimations();
 }
 
-// Navbar scroll effects
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            navbar.classList.add('navbar-hidden');
-            scrollDirection = 'down';
-        } else {
-            // Scrolling up
-            navbar.classList.remove('navbar-hidden');
-            scrollDirection = 'up';
-        }
-
-        // Add background to navbar when scrolling
-        if (scrollTop > 50) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-
-        lastScrollTop = scrollTop;
-    });
-
-
 // Forms Setup
 function setupForms() {
-    // Contact form
-    const contactForm = document.querySelector('.contact-form form');
+    const contactForm = document.querySelector(".contact-form form");
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener("submit", function(e) {
             e.preventDefault();
             handleContactForm(this);
         });
     }
-
-    // Form input animations
-    const formInputs = document.querySelectorAll('input, select, textarea');
+    const formInputs = document.querySelectorAll("input, select, textarea");
     formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
+        input.addEventListener("focus", function() {
             this.parentElement.classList.add('focused');
         });
 
-        input.addEventListener('blur', function() {
+        input.addEventListener("blur", function() {
             if (this.value === '') {
                 this.parentElement.classList.remove('focused');
             }
@@ -130,21 +95,17 @@ function setupForms() {
 // Handle Contact Form
 function handleContactForm(form) {
     const formData = new FormData(form);
-    const name = formData.get('name') ;
-    const email = formData.get('email') ;
-    const phone = formData.get('phone') ;
-    const inquiry = formData.get('inquiry') ;
-    const message = formData.get('message') ;
+    const name = formData.get("name") ;
+   
 
     // Show loading state
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
     setTimeout(() => {
         alert(`Thank you, ${name}! Your message is sent. `, 'success');
-        
         form.reset();
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
@@ -152,13 +113,13 @@ function handleContactForm(form) {
 }
 
 function setupInteractiveElements() {
-    const buttons = document.querySelectorAll('.btn');
+    const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
+        button.addEventListener("mouseenter", function() {
             this.style.transform = 'translateY(-2px)';
         });
 
-        button.addEventListener('mouseleave', function() {
+        button.addEventListener("mouseleave", function() {
             this.style.transform = 'translateY(0)';
         });
     });
@@ -194,7 +155,6 @@ function setupCursorFollow() {
     
     if (cursor) {
         document.addEventListener('mousemove', function(e) {
-              console.log('Mouse moved to:', e.clientX, e.clientY); 
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         }); 
@@ -228,7 +188,8 @@ function setupCounterAnimations() {
         counterObserver.observe(number);
     });
 }
-   window.addEventListener('DOMContentLoaded',setupCounterAnimations); 
+window.addEventListener('DOMContentLoaded',setupCounterAnimations); 
+
 // Animate Counter
 function animateCounter(element, finalValue, originalText) {
     const duration = 2000; // 2 seconds
@@ -260,7 +221,6 @@ async function loadStats() {
         const response = await fetch("../organsdonateddata.json");
         const data = await response.json();
 
-        // Find India (2023 if exists, fallback to 2022)
         const india = data.find(entry => entry.COUNTRY === "India" && entry.REPORTYEAR == 2023) 
                    || data.find(entry => entry.COUNTRY === "India");
 
