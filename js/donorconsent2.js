@@ -61,16 +61,12 @@ document.getElementById("step2-form").addEventListener("submit", async function 
     submittedat: new Date().toISOString()
   };
   Object.keys(sessionStorage).forEach(key => {
-    if (!key.endsWith("-uploaded")) {
       step2data[key] = sessionStorage.getItem(key);
-    }
   });
 
   const step1data = {};
  Object.keys(sessionStorage).forEach(key => {
-  if (!key.endsWith("-uploaded")) {
     step1data[key] = sessionStorage.getItem(key);
-  }
 });
 
   const fullData = {
