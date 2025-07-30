@@ -16,13 +16,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-async function uploadFile(file, folder, namePrefix) {
-  if (!file) return null;
-  const fileRef = ref(storage, `${folder}/${namePrefix}/${file.name}`);
-  const snapshot = await uploadBytes(fileRef, file);
-  return await getDownloadURL(snapshot.ref);
-}
-
 document.getElementById("step2-form").addEventListener("submit", async function (event) {
   event.preventDefault();
 
@@ -80,40 +73,9 @@ document.getElementById("step2-form").addEventListener("submit", async function 
   }
 });
 
-   const uploadedFiles = {};
-
-  try {
-    const files = window.donorfiles || {}; 
-
-    const bloodInput = files.bloodreport?.[0];
-    const aadharInput = files.aadharupload?.[0];
-    const othersInput = files.otherreports || [];
-
-    if (bloodInput) {
-      uploadedFiles.bloodreportURL = await uploadFile(bloodInput, "reports/blood", Date.now());
-    }
-
-    if (aadharInput) {
-      uploadedFiles.aadharuploadURL = await uploadFile(aadharInput, "reports/aadhar", Date.now());
-    }
-
-    if (othersInput.length > 0) {
-      uploadedFiles.otherreportUrls = [];
-      for (let i = 0; i < othersInput.length; i++) {
-        const url = await uploadFile(othersInput[i], "reports/other", `${i}_${Date.now()}`);
-        uploadedFiles.otherreportUrls.push(url);
-      }
-    }
-  } catch (uploadErr) {
-    console.error("Upload error:", uploadErr);
-    alert("File upload failed. Please try again.");
-    return;
-  }
-
   const fullData = {
     ...step1data,
     ...step2data,
-    ...uploadedFiles,
     submittedAt: new Date().toISOString()
   };
 
