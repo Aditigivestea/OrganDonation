@@ -77,18 +77,7 @@ document.getElementById("step2-form").addEventListener("submit", async function 
 
   try {
     await addDoc(collection(db, "DonorConsents"), fullData);
-      const auth = getAuth();
-      const user = auth.currentUser;
-
-        if (user) {
-      await setDoc(doc(db, "users", user.uid), {
-      type: "donor",
-      name: sessionStorage.getItem("fullname") || "",
-      email: user.email || "",
-      timestamp: new Date().toISOString()
-    });
-  }
-    alert("Donor consent submitted successfully!");
+     alert("Donor consent submitted successfully!");
     sessionStorage.clear();
     window.location.href="hometest.html";
   } catch (err) {
