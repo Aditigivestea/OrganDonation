@@ -41,7 +41,7 @@ onAuthStateChanged(auth, async function (user) {
     const donordata = await getDocs(donorQuery);
 
     if (donordata.empty) {
-        alert("Login to view your match status");
+        alert("No conset form found for user: ",user.email);
         console.log("No donor found for email:", user.email);
         return;
     }
