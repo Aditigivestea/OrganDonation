@@ -120,35 +120,6 @@ if (matchContainer) {
 }
 });
 
-
-let lastScrollTop = 0;
-let scrollDirection = "down";
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        navbar.classList.add('navbar-hidden');
-        scrollDirection = "down";
-    } else {
-        // Scrolling up
-        navbar.classList.remove('navbar-hidden');
-        scrollDirection = 'up';
-    }
-
-    // Add background to navbar when scrolling
-    if (scrollTop > 50) {
-        navbar.classList.add('navbar-scrolled');
-    } else {
-        navbar.classList.remove('navbar-scrolled');
-    }
-
-    lastScrollTop = scrollTop;
-});
-
-
 function setupCursorFollow() {
     const cursor = document.getElementById('cursor-follow');
 
