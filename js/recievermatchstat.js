@@ -25,7 +25,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Helper: Basic blood group compatibility
 function isBloodCompatible(receiver, donor) {
   const compatible = {
   "O-": ["O-"],
@@ -40,7 +39,6 @@ function isBloodCompatible(receiver, donor) {
   return compatible[receiver]?.includes(donor);
 }
 
-// Calculate match score
 function calculateMatchScore(receiver, donor) {
   let score = 0;
   let maxScore = 0;
@@ -96,8 +94,6 @@ else{
 return{score,compatibledata,donor}
 }
 
-
-// Render UI
 function renderBestMatch(match) {
   const { donor, score, compatibledata } = match;
 
@@ -115,7 +111,6 @@ function renderBestMatch(match) {
   compatibledataDiv.innerHTML = compatibledata.map(b => `<p>${b}</p>`).join("");
 }
 
-// Main logic
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
     alert("Please login to view your match status.");
