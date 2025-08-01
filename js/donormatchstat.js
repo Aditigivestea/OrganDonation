@@ -78,7 +78,7 @@ onAuthStateChanged(auth, async function (user) {
 
         if (donorOrgans.includes(neededOrgan)) {
             matchCount++;
-            if (matchedReceivers.length < 5) {
+            if (matchedReceivers.length <= 5) {
                 matchedReceivers.push({
                     name: receiverName,
                     organ: neededOrgan,
