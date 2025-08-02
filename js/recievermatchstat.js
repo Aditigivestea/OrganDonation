@@ -36,8 +36,11 @@ function isBloodCompatible(receiver, donor) {
   "AB-": ["AB-", "A-", "B-", "O-"],
   "AB+": ["AB+", "AB-", "A+", "A-", "B+", "B-", "O+", "O-"]
 };
-  return compatible[receiver]?.includes(donor);
-}
+  if (compatible[receiver]) {
+    return compatible[receiver].includes(donor);
+  } else {
+    return false;
+  }}
 
 function calculateMatchScore(receiver, donor) {
   let score = 0;
