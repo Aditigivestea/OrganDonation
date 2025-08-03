@@ -44,7 +44,6 @@ function isBloodCompatible(receiver, donor) {
 
 function calculateMatchScore(receiver, donor) {
   let score = 0;
-  let maxScore = 0;
   let compatibledata = [];
 console.log("Receiver Needs:", receiver.organNeeded);
 
@@ -60,7 +59,6 @@ console.log("Receiver Needs:", receiver.organNeeded);
   if(commonOrgans.length===0) return null;
   //organs
    score= score+40;
-   maxScore=maxScore+40;
    compatibledata.push("Organs Matched");
   //blood groups
    maxScore=maxScore+20;
@@ -72,7 +70,6 @@ console.log("Receiver Needs:", receiver.organNeeded);
     compatibledata.push("Blood Types are not comaptible");
   }
  //city
-  maxScore=maxScore+20;
   const reccity=receiver.city.toLowerCase();
   const doncity=donor.city.toLowerCase();
 
@@ -84,7 +81,6 @@ console.log("Receiver Needs:", receiver.organNeeded);
     compatibledata.push(`Your donor is in different city ${donor.city}`);
   }
 //illness 
-maxScore=maxScore+15;
 const illness=(donor.illness || "").toLowerCase()
 if(!illness.includes("hiv")&&!illness.includes("cancer")&&!illness.includes("hepatitis")&&!illness.includes("aids")){
   score=score+15; 
@@ -153,4 +149,5 @@ function setupCursorFollow() {
     }
 }
 window.addEventListener('DOMContentLoaded', setupCursorFollow);
+
 
