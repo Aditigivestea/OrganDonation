@@ -102,9 +102,6 @@ function renderBestMatch(match) {
   document.getElementById("donorOrgan").textContent = `Organs: ${(donor.organs || []).join(", ")}`;
   document.getElementById("matchPercent").textContent = `${score}%`;
 
-  const ring = document.getElementById("matchRing");
-  ring.style.strokeDashoffset = 100 - score;
-
   const compatibledataDiv = document.getElementById("criteriacompatibledata");
   compatibledataDiv.innerHTML = compatibledata.map(b => `<p>${b}</p>`).join("");
 }
@@ -148,6 +145,7 @@ function setupCursorFollow() {
     }
 }
 window.addEventListener('DOMContentLoaded', setupCursorFollow);
+
 
 
 
