@@ -103,7 +103,6 @@ function renderBestMatch(match) {
   document.getElementById("matchPercent").textContent = `${score}%`;
 
   const ring = document.getElementById("matchRing");
-  ring.style.strokeDasharray = "100";
   ring.style.strokeDashoffset = 100 - score;
 
   const compatibledataDiv = document.getElementById("criteriacompatibledata");
@@ -149,5 +148,6 @@ function setupCursorFollow() {
     }
 }
 window.addEventListener('DOMContentLoaded', setupCursorFollow);
+
 
 
