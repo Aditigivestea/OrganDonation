@@ -265,18 +265,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-console.log("✅ stories.js loaded completely");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
