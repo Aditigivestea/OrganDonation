@@ -233,33 +233,3 @@ p{
     color:white;
     text-shadow: #ddd;
 }
-.google-btn {
-  margin-top: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  padding: 10px 20px;
-  gap: 10px;
-  width: fit-content;
-  margin: 20px auto;
-  font-weight: bold;
-  color: #3c096c;
-  cursor: pointer;
-  box-shadow: 0 0 8px #5a189a;
-  transition: 0.3s ease;
-}
-
-.google-btn:hover {
-  box-shadow: 0 0 15px #961870;
-  transform: scale(1.03);
-}
-
-.google-logo {
-  width: 35px;
-  height: 35px;
-}
-span{
-    color: white;
-    font-weight: 500;
-}
