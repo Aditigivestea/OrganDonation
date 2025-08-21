@@ -6,7 +6,7 @@ import {
   onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import {
-  getAuth
+  getAuth, onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 // Firebase config
@@ -276,4 +276,5 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
