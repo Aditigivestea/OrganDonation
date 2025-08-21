@@ -200,8 +200,6 @@ function showsinglecard(index, direction = "right") {
     newCard.classList.add("slide-in-right");
     cardStack.appendChild(newCard);
   }
-
-  updateSwipeButtons();
 }
 
 // populate cards
@@ -269,6 +267,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
