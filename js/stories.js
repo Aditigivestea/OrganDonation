@@ -41,15 +41,15 @@ window.addEventListener("DOMContentLoaded", () => {
       );
 
       matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (!receiverSnap.empty) {
-          window.location.href = "recievermatchstat.html","_blank"; 
-        } else if (!donorSnap.empty) {
-          window.location.href = "donormatchstat.html", "_blank";
-        } else {
-          alert("No match record found for this email.");
-        }
-      });
+      e.preventDefault();
+      if (!receiverSnap.empty) {
+        window.open("recievermatchstat.html", "_blank");
+      } else if (!donorSnap.empty) {
+        window.open("donormatchstat.html", "_blank");
+      } else {
+        alert("No match record found for this email.");
+      }
+    });
 
     } catch (error) {
       console.error("Error while checking user match:", error);
@@ -267,6 +267,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
