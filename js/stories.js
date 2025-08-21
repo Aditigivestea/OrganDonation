@@ -43,9 +43,9 @@ window.addEventListener("DOMContentLoaded", () => {
       matchLink.addEventListener("click", (e) => {
         e.preventDefault();
         if (!receiverSnap.empty) {
-          window.location.href = "recievermatchstat.html"; 
+          window.location.href = "recievermatchstat.html","_blank"; 
         } else if (!donorSnap.empty) {
-          window.location.href = "donormatchstat.html";
+          window.location.href = "donormatchstat.html", "_blank";
         } else {
           alert("No match record found for this email.");
         }
@@ -267,6 +267,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
