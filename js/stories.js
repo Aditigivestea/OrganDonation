@@ -16,7 +16,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-window.addEventListener("DOMContentLoaded", () => {
   const matchLink = document.getElementById("matchstatlink");
   if (!matchLink) return;
 
@@ -55,7 +54,6 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("Error while checking user match:", error);
     }
   });
-});
 
 // Cursor follow
 function setupCursorFollow() {
@@ -267,6 +265,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
