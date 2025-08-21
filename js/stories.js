@@ -16,30 +16,30 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+ onAuthStateChanged(auth, async (user) => {
   const matchLink = document.getElementById("matchstatlink");
   if (!matchLink) return;
 
-  onAuthStateChanged(auth, async (user) => {
-    if (!user) {
-      matchLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        alert("Please login to view match status");
-      });
-      return;
-    }
+  if (!user) {
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Please login to view match status");
+    });
+    return;
+  }
 
-    try {
-      const userEmail = user.email;
+  try {
+    const userEmail = user.email;
 
-      const receiverSnap = await getDocs(
-        query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
-      );
+    const receiverSnap = await getDocs(
+      query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
+    );
 
-      const donorSnap = await getDocs(
-        query(collection(db, "DonorConsents"), where("email", "==", userEmail))
-      );
+    const donorSnap = await getDocs(
+      query(collection(db, "DonorConsents"), where("email", "==", userEmail))
+    );
 
-      matchLink.addEventListener("click", (e) => {
+    matchLink.addEventListener("click", (e) => {
       e.preventDefault();
       if (!receiverSnap.empty) {
         window.open("recievermatchstat.html", "_blank");
@@ -50,10 +50,10 @@ const auth = getAuth(app);
       }
     });
 
-    } catch (error) {
-      console.error("Error while checking user match:", error);
-    }
-  });
+  } catch (error) {
+    console.error("Error while checking user match:", error);
+  }
+});
 
 // Cursor follow
 function setupCursorFollow() {
@@ -265,6 +265,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
