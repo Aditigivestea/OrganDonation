@@ -5,9 +5,7 @@ import {
   addDoc,
   onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import {
-  getAuth, onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -276,5 +274,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
