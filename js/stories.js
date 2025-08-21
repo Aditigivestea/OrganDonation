@@ -264,6 +264,8 @@ window.addEventListener("DOMContentLoaded", () => {
       showsinglecard(currentIndex,"right");
     }
   });
+});
+
 
 
 
