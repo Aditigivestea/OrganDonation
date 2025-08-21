@@ -23,6 +23,47 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+const matchLink = document.getElementById("matchstatlink");
+
+onAuthStateChanged(auth, async (user) => {
+  const matchLink = document.getElementById("matchstatlink");
+  if (!matchLink) return;
+
+  if (!user) {
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Please login to view match status");
+    });
+    return;
+  }
+
+  try {
+    const userEmail = user.email;
+
+    const receiverSnap = await getDocs(
+      query(collection(db, "ReceiverConsents"), where("email", "==", userEmail))
+    );
+
+    const donorSnap = await getDocs(
+      query(collection(db, "DonorConsents"), where("email", "==", userEmail))
+    );
+
+    matchLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!receiverSnap.empty) {
+        window.open("recievermatchstat.html", "_blank");
+      } else if (!donorSnap.empty) {
+        window.open("donormatchstat.html", "_blank");
+      } else {
+        alert("No match record found for this email.");
+      }
+    });
+
+  } catch (error) {
+    console.error("Error while checking user match:", error);
+  }
+});
+
 // Cursor follow
 function setupCursorFollow() {
   const cursor = document.getElementById("cursor-follow");
@@ -235,3 +276,4 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
